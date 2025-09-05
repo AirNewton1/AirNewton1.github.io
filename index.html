@@ -13,10 +13,10 @@
     .muted{color:#666;font-size:.95rem}
     section{margin:1.2rem 0}
     .profile{display:flex;align-items:center;gap:20px;margin:0 0 18px}
-    /* square avatar with sharp corners */
-    .avatar{
-      width:160px;height:160px;
-      border-radius:0;
+    /* force square avatar; !important beats any earlier styles */
+    img.avatar{
+      width:200px;height:200px;
+      border-radius:0 !important;
       object-fit:cover;
       box-shadow:0 6px 18px rgba(0,0,0,.08);
     }
@@ -24,12 +24,12 @@
   </style>
 </head>
 <body>
-  <!-- Header: name + square photo (no rounded corners) -->
+  <!-- Header: name + square photo -->
   <header class="profile">
-    <img class="avatar" src="/photo.jpg" alt="Haowen Shi" loading="lazy">
+    <!-- ?v=2 busts CDN/browser cache -->
+    <img class="avatar" src="/photo.jpg?v=2" alt="Haowen Shi" loading="lazy" width="200" height="200">
     <div>
       <h1>Haowen Shi</h1>
-      <p class="tagline">Undergraduate in Statistics, School of Mathematics, Nanjing University</p>
     </div>
   </header>
 
